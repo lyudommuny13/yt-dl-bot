@@ -85,13 +85,13 @@ async def download_video(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         # Use yt-dlp.exe as a subprocess
         command = [
-            YT_DLP_PATH,
-            '--cookies', os.path.join(BASE_DIR, 'cookies.txt'),  # Path to your cookies file
-            '--add-header', 'User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-            '--ffmpeg-location', FFMPEG_PATH,  # Specify FFmpeg location
-            '-f', 'b',  # Use "-f b" instead of "-f best"
-            '-o', os.path.join(DOWNLOADS_DIR, '%(title)s.%(ext)s'),
-            '--write-thumbnail',  # Download thumbnail
+            "yt-dlp",  # Use the Linux version of yt-dlp
+            "--cookies", os.path.join(BASE_DIR, 'cookies.txt'),
+            "--add-header", "User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+            "--ffmpeg-location", FFMPEG_PATH,
+            "-f", "b",
+            "-o", os.path.join(DOWNLOADS_DIR, '%(title)s.%(ext)s'),
+            "--write-thumbnail",
             url
         ]
 
@@ -132,14 +132,13 @@ async def download_audio(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         # Use yt-dlp.exe as a subprocess
         command = [
-            YT_DLP_PATH,
-            '--cookies', os.path.join(BASE_DIR, 'cookies.txt'),  # Path to your cookies file
-            '--add-header', 'User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-            '--ffmpeg-location', FFMPEG_PATH,  # Specify FFmpeg location
-            '-f', 'bestaudio',
-            '--extract-audio',
-            '--audio-format', 'mp3',
-            '-o', os.path.join(DOWNLOADS_DIR, '%(title)s.%(ext)s'),
+            "yt-dlp",  # Use the Linux version of yt-dlp
+            "--cookies", os.path.join(BASE_DIR, 'cookies.txt'),
+            "--add-header", "User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+            "--ffmpeg-location", FFMPEG_PATH,
+            "-f", "b",
+            "-o", os.path.join(DOWNLOADS_DIR, '%(title)s.%(ext)s'),
+            "--write-thumbnail",
             url
         ]
 
