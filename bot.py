@@ -243,8 +243,19 @@ def main():
 
     application.add_handler(conv_handler)
 
-    # Start bot
-    application.run_polling()
+    # Webhook setup
+    async def set_webhook(app):
+        await app.bot.set_webhook(url="https://youtube-downloader-bot-bcve.onrender.com")
+
+    if __name__ == "__main__":
+        application.run_webhook(
+            listen="0.0.0.0",
+            port=os.getenv("PORT", 8443),
+            webhook_url="https://your-render-url.onrender.com/webhook",
+            cert=None,  # Add your SSL certificate if needed
+            key=None,   # Add your SSL key if needed
+            drop_pending_updates=True,
+        )
 
 if __name__ == "__main__":
     main()
