@@ -7,7 +7,7 @@ import asyncio
 import random
 
 # Replace with your Bot API token
-BOT_TOKEN = "7625156217:AAFYPOan4H-XRIM4R_P_CCmdjqyQwIdxZOM"
+BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
 
 # Directory paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -97,7 +97,7 @@ async def download_video(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         command = [
             "yt-dlp",
-            '--cookies', os.path.join(BASE_DIR, 'cookies.txt'),
+            '--cookies', os.path.join(BASE_DIR, 'cookies.txt'),  # Path to cookies file
             '--add-header', f'User-Agent:{user_agent}',
             '--ffmpeg-location', FFMPEG_PATH,
             '-f', 'b',
@@ -151,7 +151,7 @@ async def download_audio(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         command = [
             "yt-dlp",
-            '--cookies', os.path.join(BASE_DIR, 'cookies.txt'),
+            '--cookies', os.path.join(BASE_DIR, 'cookies.txt'),  # Path to cookies file
             '--add-header', f'User-Agent:{user_agent}',
             '--ffmpeg-location', FFMPEG_PATH,
             '-f', 'bestaudio',
