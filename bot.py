@@ -7,7 +7,7 @@ import asyncio
 import random
 
 # Replace with your Bot API token
-BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
+BOT_TOKEN = "7625156217:AAFYPOan4H-XRIM4R_P_CCmdjqyQwIdxZOM"
 
 # Directory paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
