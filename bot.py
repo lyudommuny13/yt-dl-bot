@@ -11,20 +11,18 @@ BOT_TOKEN = "7625156217:AAFYPOan4H-XRIM4R_P_CCmdjqyQwIdxZOM"
 
 # Directory paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-BIN_DIR = os.path.join(BASE_DIR, "bin")
 DOWNLOADS_DIR = os.path.join(BASE_DIR, "downloads")
-
-# Path to executables
-YT_DLP_PATH = os.path.join(BIN_DIR, "yt-dlp")
-FFMPEG_PATH = "/usr/bin/ffmpeg"
 
 # Ensure the downloads directory exists
 os.makedirs(DOWNLOADS_DIR, exist_ok=True)
 
 # Install FFmpeg if not already installed
-if not os.path.exists(FFMPEG_PATH):
+if not os.path.exists("/usr/bin/ffmpeg"):
     subprocess.run(["sudo", "apt-get", "update"])
     subprocess.run(["sudo", "apt-get", "install", "-y", "ffmpeg"])
+
+# Set FFmpeg path
+FFMPEG_PATH = "/usr/bin/ffmpeg"
 
 # Conversation states
 WAITING_FOR_URL, WAITING_FOR_CHOICE = range(2)
@@ -98,7 +96,7 @@ async def download_video(update: Update, context: ContextTypes.DEFAULT_TYPE):
         user_agent = random.choice(user_agents)
 
         command = [
-            YT_DLP_PATH,
+            "yt-dlp",
             '--cookies', os.path.join(BASE_DIR, 'cookies.txt'),
             '--add-header', f'User-Agent:{user_agent}',
             '--ffmpeg-location', FFMPEG_PATH,
@@ -152,7 +150,7 @@ async def download_audio(update: Update, context: ContextTypes.DEFAULT_TYPE):
         user_agent = random.choice(user_agents)
 
         command = [
-            YT_DLP_PATH,
+            "yt-dlp",
             '--cookies', os.path.join(BASE_DIR, 'cookies.txt'),
             '--add-header', f'User-Agent:{user_agent}',
             '--ffmpeg-location', FFMPEG_PATH,
