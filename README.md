@@ -1,5 +1,5 @@
 <h1 align="center">
-  Hi there, I'm <a href="https://github.com/your-username">Your Name</a> 👋
+  Hi there, I'm <a href="https://github.com/lyudommuny13">LYUDOMMUNY</a> 👋
 </h1>
 
 <p align="center">
@@ -23,10 +23,10 @@
 
 ## 📊 **GitHub Stats**
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=your-username&theme=radical&hide_border=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=lyudommuny13&theme=radical&hide_border=true" />
 </p>
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=your-username&show_icons=true&theme=radical&hide_border=true" />
+  <img src="https://github-readme-stats.vercel.app/api?username=lyudommuny13&show_icons=true&theme=radical&hide_border=true" />
 </p>
 
 ---
