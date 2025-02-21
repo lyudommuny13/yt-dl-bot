@@ -54,3 +54,8 @@
 ---
 
 🚀 **Thanks for stopping by! Feel free to explore my repositories.** 😊
+## 🐍 Contribution Graph  
+<p align="center">
+  <img src="https://github.com/lyudommuny13/lyudommuny13/blob/output/github-contribution-grid-snake.svg" alt="Snake animation">
+</p>
+
