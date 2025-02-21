@@ -91,3 +91,123 @@
   </svg>
   <div class="w-2"></div>
 </div>
+
+<style>
+  /* From Uiverse.io by JeremGamingYT */ 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.loader svg {
+  margin: 0 5px;
+  width: 64px;
+  height: 64px;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.w-2 {
+  width: 0.5em;
+}
+
+/* Animations */
+.dash {
+  animation:
+    dashArray 2s ease-in-out infinite,
+    dashOffset 2s linear infinite;
+}
+
+.spin {
+  animation:
+    spinDashArray 2s ease-in-out infinite,
+    spin 8s ease-in-out infinite,
+    dashOffset 2s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes dashArray {
+  0% {
+    stroke-dasharray: 0 1 359 0;
+  }
+  50% {
+    stroke-dasharray: 0 359 1 0;
+  }
+  100% {
+    stroke-dasharray: 359 1 0 0;
+  }
+}
+
+@keyframes spinDashArray {
+  0% {
+    stroke-dasharray: 270 90;
+  }
+  50% {
+    stroke-dasharray: 0 360;
+  }
+  100% {
+    stroke-dasharray: 270 90;
+  }
+}
+
+@keyframes dashOffset {
+  0% {
+    stroke-dashoffset: 365;
+  }
+  100% {
+    stroke-dashoffset: 5;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  12.5%,
+  25% {
+    transform: rotate(270deg);
+  }
+  37.5%,
+  50% {
+    transform: rotate(540deg);
+  }
+  62.5%,
+  75% {
+    transform: rotate(810deg);
+  }
+  87.5%,
+  100% {
+    transform: rotate(1080deg);
+  }
+}
+
+/* Dégradés */
+.gradient-b {
+  stroke: url(#b);
+}
+
+.gradient-c {
+  stroke: url(#c);
+}
+
+.gradient-d {
+  stroke: url(#d);
+}
+
+</style>
